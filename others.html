@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2022/07/netflix-800x450.jpg);
+      }
+      table {
+        border: 1px solid #333;
+        padding: 10px;
+        background-color: #dc3535;
+      }
+      td {
+        /* border: 1px solid #333; */
+        padding: 10px;
+      }
+
+      thead,
+      tfoot {
+        background-color: #333;
+        color: #fff;
+      }
+
+      th {
+        padding: 30px 300px;
+      }
+
+      table {
+        margin: auto;
+        margin-top: 50px;
+      }
+      .btn {
+        padding: 20px;
+        width: 400px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+      }
+      .btn:hover {
+        background-color: lightslategray;
+      }
+      .back {
+        padding: 10px;
+        width: 100px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+      }
+      .back:hover {
+        background-color: lightslategray;
+      }
+      .btnContainer {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Settings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <div class="btnContainer">
+              <input
+                class="btn"
+                type="button"
+                value="View"
+                onClick="location.href='view.html'"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="btnContainer">
+              <input
+                class="btn"
+                type="button"
+                value="Delete"
+                onClick="location.href='delete.html'"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="btnContainer">
+              <input
+                class="btn"
+                type="button"
+                value="Update"
+                onClick="location.href='update.html'"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="btnContainer">
+              <input
+                class="back"
+                type="button"
+                value="Back"
+                onClick="location.href='index.html'"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

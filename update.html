@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Update</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2022/07/netflix-800x450.jpg);
+      }
+      table {
+        border: 1px solid #333;
+        padding: 10px;
+        background-color: #dc3535;
+      }
+      td {
+        /* border: 1px solid #333; */
+        padding: 10px;
+      }
+
+      thead,
+      tfoot {
+        background-color: #333;
+        color: #fff;
+      }
+
+      th {
+        padding: 30px 300px;
+      }
+
+      table {
+        margin: auto;
+        margin-top: 50px;
+      }
+
+      .fields {
+        width: 180px;
+      }
+
+      .text {
+        padding: 10px;
+        width: 450px;
+        border-radius: 5px;
+        border: none;
+      }
+      select {
+        padding: 10px;
+        width: 470px;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+      }
+
+      .radio1 {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .radio2 {
+        margin-left: 40px;
+        margin-right: 30px;
+      }
+
+      .btn {
+        padding: 20px;
+        width: 400px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+      }
+      .btn:hover {
+        background-color: lightslategray;
+      }
+      .settings {
+        padding: 20px;
+        width: 70px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+        text-align: center;
+      }
+      .settings:hover {
+        background-color: lightslategray;
+      }
+
+      .btnContainer {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <form action="">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Update movies</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fields">Booking ID</td>
+            <td><input class="text" type="text" autocomplete="off" /></td>
+          </tr>
+          <tr>
+            <td class="fields">Your name</td>
+            <td><input class="text" type="text" autocomplete="off" /></td>
+          </tr>
+          <tr>
+            <td class="fields">Your phone number</td>
+            <td><input class="text" type="text" autocomplete="off" /></td>
+          </tr>
+          <tr>
+            <td class="fields">Movie name</td>
+            <td><input class="text" type="text" autocomplete="off" /></td>
+          </tr>
+          <tr>
+            <td class="fields">No of tickets</td>
+            <td>
+              <select name="" id="">
+                <option value="select">-- select --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8">8</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">Screen</td>
+            <td>
+              <label class="radio1"
+                >Screen 1<input
+                  type="radio"
+                  name="screen"
+                  id=""
+                  value="screen1" /></label
+              ><label
+                >Screen 2<input
+                  type="radio"
+                  name="screen"
+                  id=""
+                  value="screen2"
+              /></label>
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">Class</td>
+            <td>
+              <label class="radio2"
+                >First class<input
+                  type="radio"
+                  name="class"
+                  id=""
+                  value="firstClass" /></label
+              ><label class="radio2">
+                Second class<input
+                  type="radio"
+                  name="class"
+                  id=""
+                  value="secondClass" /></label
+              ><label
+                >balcony<input type="radio" name="class" id="" value="balcony"
+              /></label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="btnContainer">
+                <input
+                  class="settings"
+                  type="button"
+                  value="others"
+                  onClick="location.href='others.html'"
+                />
+                <input class="btn" type="submit" value="UPDATE" />
+                <input class="settings" type="reset" value="clear" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>
