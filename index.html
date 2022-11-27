@@ -92,7 +92,7 @@
         margin-top: 20px;
       }
     </style>
-    <form action="">
+    <form name="booking" action="" onsubmit="return validateBooking()">
       <table>
         <thead>
           <tr>
@@ -102,20 +102,36 @@
         <tbody>
           <tr>
             <td class="fields">Your name</td>
-            <td><input class="text" type="text" autocomplete="off" /></td>
+            <td>
+              <input class="text" name="name" type="text" autocomplete="off" />
+            </td>
           </tr>
           <tr>
             <td class="fields">Your phone number</td>
-            <td><input class="text" type="text" autocomplete="off" /></td>
+            <td>
+              <input
+                name="phone_no"
+                class="text"
+                type="text"
+                autocomplete="off"
+              />
+            </td>
           </tr>
           <tr>
             <td class="fields">Movie name</td>
-            <td><input class="text" type="text" autocomplete="off" /></td>
+            <td>
+              <input
+                name="movie_name"
+                class="text"
+                type="text"
+                autocomplete="off"
+              />
+            </td>
           </tr>
           <tr>
             <td class="fields">No of tickets</td>
             <td>
-              <select name="" id="">
+              <select name="select" id="">
                 <option value="select">-- select --</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -148,17 +164,21 @@
               <label class="radio2"
                 >First class<input
                   type="radio"
-                  name="class"
-                  id=""
-                  value="firstClass" /></label
+                  id="first-class"
+                  value="firstClass"
+                  name="radio2" /></label
               ><label class="radio2">
                 Second class<input
                   type="radio"
-                  name="class"
-                  id=""
-                  value="secondClass" /></label
+                  id="second-class"
+                  value="secondClass"
+                  name="radio2" /></label
               ><label
-                >balcony<input type="radio" name="class" id="" value="balcony"
+                >balcony<input
+                  type="radio"
+                  id="balcony"
+                  value="balcony"
+                  name="radio2"
               /></label>
             </td>
           </tr>
@@ -179,5 +199,35 @@
         </tbody>
       </table>
     </form>
+    <script>
+      let name = booking.name;
+      let ph = booking.phone_no;
+      let movie_name = booking.movie_name;
+      let no_of_tickets = booking.select;
+      let screen = booking.screen;
+      let radio2 = booking.radio2;
+      function validateBooking() {
+        if (
+          name.value == "" ||
+          ph.value == "" ||
+          movie_name.value == "" ||
+          no_of_tickets.value == "-- select --" ||
+          screen.value == "" ||
+          radio2.value == ""
+        ) {
+          alert("Complete all fields");
+          name.focus();
+        } else if (ph.value.length != 10 || isNaN(ph.value)) {
+          alert("Enter proper phone number");
+          ph.focus();
+        } else if (
+          !isNaN(movie_name.value.charAt(0)) ||
+          !isNaN(name.value.charAt(0))
+        ) {
+          alert("Enter proper name && movie name");
+        }
+        return false;
+      }
+    </script>
   </body>
 </html>
