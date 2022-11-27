@@ -92,7 +92,7 @@
         margin-top: 20px;
       }
     </style>
-    <form name="booking" action="" onsubmit="return validateBooking()">
+    <form name="booking" action="insert.php" method="POST">
       <table>
         <thead>
           <tr>
@@ -191,7 +191,12 @@
                   value="others"
                   onClick="location.href='others.html'"
                 />
-                <input class="btn" type="submit" value="BOOK" />
+                <input
+                  class="btn"
+                  type="submit"
+                  value="BOOK"
+                  onclick="return validateBooking()"
+                />
                 <input class="settings" type="reset" value="clear" />
               </div>
             </td>
@@ -217,16 +222,19 @@
         ) {
           alert("Complete all fields");
           name.focus();
+          return false;
         } else if (ph.value.length != 10 || isNaN(ph.value)) {
           alert("Enter proper phone number");
           ph.focus();
+          return false;
         } else if (
           !isNaN(movie_name.value.charAt(0)) ||
           !isNaN(name.value.charAt(0))
         ) {
           alert("Enter proper name && movie name");
+          name.focus();
+          return false;
         }
-        return false;
       }
     </script>
   </body>

@@ -92,7 +92,12 @@
         margin-top: 20px;
       }
     </style>
-    <form action="">
+    <form
+      action="delete.php"
+      name="delete_form"
+      method="POST"
+      onsubmit="return validateDelete()"
+    >
       <table>
         <thead>
           <tr>
@@ -102,11 +107,14 @@
         <tbody>
           <tr>
             <td class="fields">Booking ID</td>
-            <td><input class="text" type="text" autocomplete="off" /></td>
-          </tr>
-          <tr>
-            <td class="fields">Movie name</td>
-            <td><input class="text" type="text" autocomplete="off" /></td>
+            <td>
+              <input
+                class="text"
+                type="text"
+                name="booking_id"
+                autocomplete="off"
+              />
+            </td>
           </tr>
 
           <tr>
@@ -126,5 +134,16 @@
         </tbody>
       </table>
     </form>
+    <script>
+      function validateDelete() {
+        if (
+          delete_form.booking_id.value == 0 ||
+          delete_form.booking_id.value == ""
+        ) {
+          alert("enter a valid booking id");
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

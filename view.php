@@ -19,7 +19,8 @@
       }
       td {
         /* border: 1px solid #333; */
-        padding: 10px;
+	padding: 10px;
+	text-align:center;
       }
 
       thead,
@@ -115,15 +116,23 @@
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>id</td>
-                <td>name</td>
-                <td>ph no</td>
-                <td>movie name</td>
-                <td>n o t</td>
-                <td>screen</td>
-                <td>class</td>
-            </tr>
+                    <?php
+                                //connecting to mysql and movie database
+            $cid = mysqli_connect("localhost", "root", "", "movie");
+            if(!$cid){
+                echo "connection failed";
+            }
+            else{
+                echo "connection successfull";
+            }
+            //Showing data from database
+            $sql_command = "select * from booking";
+            $action = mysqli_query($cid, $sql_command);
+            while ($line = mysqli_fetch_assoc($action)){
+                    echo "<tr><td>".$line["id"]."</td><td>".$line["name_db"]."</td><td>".$line["ph_db"]."</td><td>".$line["movie_name_db"]."</td><td>".$line["no_of_tickets_db"]."</td><td>".$line["screen_db"]."</td><td>".$line["class_db"]."</td></tr>";
+            } 
+                    mysqli_close($cid);
+        ?>
           <tr>
             <td colspan="7">
               <div class="btnContainer">
@@ -141,5 +150,7 @@
         </tbody>
       </table>
     </form>
+
+
   </body>
 </html>
