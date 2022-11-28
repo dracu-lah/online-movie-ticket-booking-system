@@ -103,16 +103,19 @@
       <table>
         <thead>
           <tr>
-            <th colspan="7">Booked movies</th>
+            <th colspan="9">Booked movies</th>
           </tr>
           <tr>
             <th class="fields">id</th>
             <th class="fields">Name</th>
             <th class="fields">Ph no</th>
             <th class="fields">Movie name</th>
+            <th class="fields">Date</th>
             <th class="fields">N o t</th>
             <th class="fields">Screen</th>
             <th class="fields">Class</th>
+             <th class="fields">Amount</th>
+             
           </tr>
         </thead>
         <tbody>
@@ -129,12 +132,12 @@
             $sql_command = "select * from booking";
             $action = mysqli_query($cid, $sql_command);
             while ($line = mysqli_fetch_assoc($action)){
-                    echo "<tr><td>".$line["id"]."</td><td>".$line["name_db"]."</td><td>".$line["ph_db"]."</td><td>".$line["movie_name_db"]."</td><td>".$line["no_of_tickets_db"]."</td><td>".$line["screen_db"]."</td><td>".$line["class_db"]."</td></tr>";
+                    echo "<tr><td>".$line["id"]."</td><td>".$line["name_db"]."</td><td>".$line["ph_db"]."</td><td>".$line["movie_name_db"]."</td><td>".$line["date_db"]."</td><td>".$line["no_of_tickets_db"]."</td><td>".$line["screen_db"]."</td><td>".$line["class_db"]."</td><td>".$line["amount_db"]."</td></tr>";
             } 
                     mysqli_close($cid);
         ?>
           <tr>
-            <td colspan="7">
+            <td colspan="9">
               <div class="btnContainer">
                 <input
                   class="settings"

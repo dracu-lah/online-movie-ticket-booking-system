@@ -128,18 +128,18 @@
               />
             </td>
           </tr>
-          <tr>
-            <td class="fields">No of tickets</td>
+                   <tr>
+            <td class="fields">Date</td>
             <td>
-              <select name="select" id="">
-                <option value="select">-- select --</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="4">4</option>
-                <option value="8">8</option>
-              </select>
+              <input
+                name="date"
+                class="text"
+                type="date"
+                autocomplete="off"
+              />
             </td>
           </tr>
+
           <tr>
             <td class="fields">Screen</td>
             <td>
@@ -153,6 +153,7 @@
                 >Screen 2<input
                   type="radio"
                   name="screen"
+                  onchange="amountCalc()"
                   id=""
                   value="screen2"
               /></label>
@@ -163,23 +164,43 @@
             <td>
               <label class="radio2"
                 >First class<input
+                  onchange="amountCalc()"
                   type="radio"
                   id="first-class"
                   value="firstClass"
                   name="radio2" /></label
               ><label class="radio2">
                 Second class<input
+                  onchange="amountCalc()"
                   type="radio"
                   id="second-class"
                   value="secondClass"
                   name="radio2" /></label
               ><label
                 >balcony<input
+                  onchange="amountCalc()"
                   type="radio"
                   id="balcony"
                   value="balcony"
                   name="radio2"
               /></label>
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">No of tickets</td>
+            <td>
+              <select onchange="amountCalc()" name="select" id="">
+                <option value="select">-- select --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8">8</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <b>AMOUNT :</b><span id="amt"></span>
             </td>
           </tr>
           <tr>
@@ -234,6 +255,45 @@
           alert("Enter proper name && movie name");
           name.focus();
           return false;
+        }
+      }
+
+      let amount = 0;
+      function amountCalc() {
+        if (radio2.value == "balcony") {
+          if (no_of_tickets.value == 2) {
+            amount = 150 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 150 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 150 * 8;
+          } else {
+            amount = 150;
+          }
+
+          document.getElementById("amt").innerHTML = amount;
+        } else if (radio2.value == "firstClass") {
+          if (no_of_tickets.value == 2) {
+            amount = 120 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 120 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 120 * 8;
+          } else {
+            amount = 120;
+          }
+          document.getElementById("amt").innerHTML = amount;
+        } else if (radio2.value == "secondClass") {
+          if (no_of_tickets.value == 2) {
+            amount = 100 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 100 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 100 * 8;
+          } else {
+            amount = 100;
+          }
+          document.getElementById("amt").innerHTML = amount;
         }
       }
     </script>

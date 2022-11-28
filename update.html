@@ -1,215 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Movieflix</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2022/07/netflix-800x450.jpg);
+      }
+      table {
+        border: 1px solid #333;
+        padding: 10px;
+        background-color: #dc3535;
+      }
+      td {
+        /* border: 1px solid #333; */
+        padding: 10px;
+      }
 
-<head>
-  <title>Movieflix</title>
-</head>
+      thead,
+      tfoot {
+        background-color: #333;
+        color: #fff;
+      }
 
-<body>
-  <style>
-    * {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+      th {
+        padding: 30px 300px;
+      }
 
-    body {
-      background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2022/07/netflix-800x450.jpg);
-    }
+      table {
+        margin: auto;
+        margin-top: 50px;
+      }
 
-    table {
-      border: 1px solid #333;
-      padding: 10px;
-      background-color: #dc3535;
-    }
+      .fields {
+        width: 180px;
+      }
 
-    td {
-      /* border: 1px solid #333; */
-      padding: 10px;
-    }
+      .text {
+        padding: 10px;
+        width: 450px;
+        border-radius: 5px;
+        border: none;
+      }
+      select {
+        padding: 10px;
+        width: 470px;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+      }
 
-    thead,
-    tfoot {
-      background-color: #333;
-      color: #fff;
-    }
+      .radio1 {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .radio2 {
+        margin-left: 40px;
+        margin-right: 30px;
+      }
 
-    th {
-      padding: 30px 300px;
-    }
+      .btn {
+        padding: 20px;
+        width: 400px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+      }
+      .btn:hover {
+        background-color: lightslategray;
+      }
+      .settings {
+        padding: 20px;
+        width: 70px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background-color: #333;
+        text-align: center;
+      }
+      .settings:hover {
+        background-color: lightslategray;
+      }
 
-    table {
-      margin: auto;
-      margin-top: 50px;
-    }
-
-    .fields {
-      width: 180px;
-    }
-
-    .text {
-      padding: 10px;
-      width: 450px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    select {
-      padding: 10px;
-      width: 470px;
-      border-radius: 5px;
-      border: none;
-      text-align: center;
-    }
-
-    .radio1 {
-      margin-left: 100px;
-      margin-right: 100px;
-    }
-
-    .radio2 {
-      margin-left: 40px;
-      margin-right: 30px;
-    }
-
-    .btn {
-      padding: 20px;
-      width: 400px;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      background-color: #333;
-    }
-
-    .btn:hover {
-      background-color: lightslategray;
-    }
-
-    .settings {
-      padding: 20px;
-      width: 70px;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      background-color: #333;
-      text-align: center;
-    }
-
-    .settings:hover {
-      background-color: lightslategray;
-    }
-
-    .btnContainer {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
-  <form name="booking" action="update.php" method="POST" ">
+      .btnContainer {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <form name="booking" action="update.php" method="POST">
       <table>
         <thead>
           <tr>
-            <th colspan=" 2">Book movies</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="fields">id</td>
-        <td>
-          <input class="text" name="id" type="text" autocomplete="off" />
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">Your name</td>
-        <td>
-          <input class="text" name="name" type="text" autocomplete="off" />
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">Your phone number</td>
-        <td>
-          <input name="phone_no" class="text" type="text" autocomplete="off" />
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">Movie name</td>
-        <td>
-          <input name="movie_name" class="text" type="text" autocomplete="off" />
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">No of tickets</td>
-        <td>
-          <select name="select" id="">
-            <option value="select">-- select --</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="8">8</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">Screen</td>
-        <td>
-          <label class="radio1">Screen 1<input type="radio" name="screen" id="" value="screen1" /></label><label>Screen
-            2<input type="radio" name="screen" id="" value="screen2" /></label>
-        </td>
-      </tr>
-      <tr>
-        <td class="fields">Class</td>
-        <td>
-          <label class="radio2">First class<input type="radio" id="first-class" value="firstClass"
-              name="radio2" /></label><label class="radio2">
-            Second class<input type="radio" id="second-class" value="secondClass"
-              name="radio2" /></label><label>balcony<input type="radio" id="balcony" value="balcony"
-              name="radio2" /></label>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div class="btnContainer">
-            <input class="settings" type="button" value="others" onClick="location.href='others.html'" />
-            <input class="btn" type="submit" value="BOOK" onclick="return validateBooking()" />
-            <input class="settings" type="reset" value="clear" />
-          </div>
-        </td>
-      </tr>
-    </tbody>
-    </table>
-  </form>
-  <script>
-    let id = booking.id;
-    let name = booking.name;
-    let ph = booking.phone_no;
-    let movie_name = booking.movie_name;
-    let no_of_tickets = booking.select;
-    let screen = booking.screen;
-    let radio2 = booking.radio2;
-    function validateBooking() {
-      if (
-        id.value == "" ||
-        name.value == "" ||
-        ph.value == "" ||
-        movie_name.value == "" ||
-        no_of_tickets.value == "-- select --" ||
-        screen.value == "" ||
-        radio2.value == ""
-      ) {
-        alert("Complete all fields");
-        name.focus();
-        return false;
-      } else if (ph.value.length != 10 || isNaN(ph.value)) {
-        alert("Enter proper phone number");
-        ph.focus();
-        return false;
-      } else if (
-        !isNaN(movie_name.value.charAt(0)) ||
-        !isNaN(name.value.charAt(0))
-      ) {
-        alert("Enter proper name && movie name");
-        name.focus();
-        return false;
-      }
-    }
-  </script>
-</body>
+            <th colspan="2">Update movie ticket</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td class="fields">ID</td>
+            <td>
+              <input
+                name="id"
+                class="text"
+                type="text"
+                autocomplete="off"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">Your name</td>
+            <td>
+              <input class="text" name="name" type="text" autocomplete="off" />
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="fields">Your phone number</td>
+            <td>
+              <input
+                name="phone_no"
+                class="text"
+                type="text"
+                autocomplete="off"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">Movie name</td>
+            <td>
+              <input
+                name="movie_name"
+                class="text"
+                type="text"
+                autocomplete="off"
+              />
+            </td>
+          </tr>
+                   <tr>
+            <td class="fields">Date</td>
+            <td>
+              <input
+                name="date"
+                class="text"
+                type="date"
+                autocomplete="off"
+              />
+            </td>
+          </tr>
 
+          <tr>
+            <td class="fields">Screen</td>
+            <td>
+              <label class="radio1"
+                >Screen 1<input
+                  type="radio"
+                  name="screen"
+                  id=""
+                  value="screen1" /></label
+              ><label
+                >Screen 2<input
+                  type="radio"
+                  name="screen"
+                  onchange="amountCalc()"
+                  id=""
+                  value="screen2"
+              /></label>
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">Class</td>
+            <td>
+              <label class="radio2"
+                >First class<input
+                  onchange="amountCalc()"
+                  type="radio"
+                  id="first-class"
+                  value="firstClass"
+                  name="radio2" /></label
+              ><label class="radio2">
+                Second class<input
+                  onchange="amountCalc()"
+                  type="radio"
+                  id="second-class"
+                  value="secondClass"
+                  name="radio2" /></label
+              ><label
+                >balcony<input
+                  onchange="amountCalc()"
+                  type="radio"
+                  id="balcony"
+                  value="balcony"
+                  name="radio2"
+              /></label>
+            </td>
+          </tr>
+          <tr>
+            <td class="fields">No of tickets</td>
+            <td>
+              <select onchange="amountCalc()" name="select" id="">
+                <option value="select">-- select --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8">8</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <b>AMOUNT :</b><span id="amt"></span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="btnContainer">
+                <input
+                  class="settings"
+                  type="button"
+                  value="others"
+                  onClick="location.href='others.html'"
+                />
+                <input
+                  class="btn"
+                  type="submit"
+                  value="BOOK"
+                  onclick="return validateBooking()"
+                />
+                <input class="settings" type="reset" value="clear" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <script>
+      let name = booking.name;
+      let ph = booking.phone_no;
+      let movie_name = booking.movie_name;
+      let no_of_tickets = booking.select;
+      let screen = booking.screen;
+      let radio2 = booking.radio2;
+      function validateBooking() {
+        if (
+          name.value == "" ||
+          ph.value == "" ||
+          movie_name.value == "" ||
+          no_of_tickets.value == "-- select --" ||
+          screen.value == "" ||
+          radio2.value == ""
+        ) {
+          alert("Complete all fields");
+          name.focus();
+          return false;
+        } else if (ph.value.length != 10 || isNaN(ph.value)) {
+          alert("Enter proper phone number");
+          ph.focus();
+          return false;
+        } else if (
+          !isNaN(movie_name.value.charAt(0)) ||
+          !isNaN(name.value.charAt(0))
+        ) {
+          alert("Enter proper name && movie name");
+          name.focus();
+          return false;
+        }
+      }
+
+      let amount = 0;
+      function amountCalc() {
+        if (radio2.value == "balcony") {
+          if (no_of_tickets.value == 2) {
+            amount = 150 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 150 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 150 * 8;
+          } else {
+            amount = 150;
+          }
+
+          document.getElementById("amt").innerHTML = amount;
+        } else if (radio2.value == "firstClass") {
+          if (no_of_tickets.value == 2) {
+            amount = 120 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 120 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 120 * 8;
+          } else {
+            amount = 120;
+          }
+          document.getElementById("amt").innerHTML = amount;
+        } else if (radio2.value == "secondClass") {
+          if (no_of_tickets.value == 2) {
+            amount = 100 * 2;
+          } else if (no_of_tickets.value == 4) {
+            amount = 100 * 4;
+          } else if (no_of_tickets.value == 8) {
+            amount = 100 * 8;
+          } else {
+            amount = 100;
+          }
+          document.getElementById("amt").innerHTML = amount;
+        }
+      }
+    </script>
+  </body>
 </html>
