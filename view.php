@@ -12,13 +12,11 @@
         background-image: url(https://cdn.arstechnica.net/wp-content/uploads/2022/07/netflix-800x450.jpg);
       }
       table {
-        /* border: 1px solid #333; */
         border: none;
         padding: 10px;
         background-color: #dc3535;
       }
       td {
-        /* border: 1px solid #333; */
 	padding: 10px;
 	text-align:center;
       }
@@ -94,7 +92,6 @@
         margin-top: 20px;
       }
       .fields {
-          /* border: 1px solid #333; */
           padding: 5px;
           background-color: #333;
       }
@@ -119,18 +116,12 @@
           </tr>
         </thead>
         <tbody>
-                    <?php
-                                //connecting to mysql and movie database
-            $cid = mysqli_connect("localhost", "root", "", "movie");
-            if(!$cid){
-                echo "connection failed";
-            }
-            else{
-                echo "connection successfull";
-            }
+            <?php
+            // connecting to mysql and movie database
+            $cid = mysqli_connect("localhost", "root", "", "movie")or die("<script>alert('Error Connection'); window.location.href='update.html';</script>");
             //Showing data from database
             $sql_command = "select * from booking";
-            $action = mysqli_query($cid, $sql_command);
+            $action = mysqli_query($cid, $sql_command)or die("<script>alert('Error Retrieving Data'); window.location.href='update.html';</script>");
             while ($line = mysqli_fetch_assoc($action)){
                     echo "<tr><td>".$line["id"]."</td><td>".$line["name_db"]."</td><td>".$line["ph_db"]."</td><td>".$line["movie_name_db"]."</td><td>".$line["date_db"]."</td><td>".$line["no_of_tickets_db"]."</td><td>".$line["screen_db"]."</td><td>".$line["class_db"]."</td><td>".$line["amount_db"]."</td></tr>";
             } 
@@ -145,8 +136,6 @@
                   value="others"
                   onClick="location.href='others.html'"
                 />
-                <!-- <input class="btn" type="submit" value="BOOK" /> -->
-                <!-- <input class="settings" type="reset" value="clear" /> -->
               </div>
             </td>
           </tr>
