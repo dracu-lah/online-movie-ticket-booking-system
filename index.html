@@ -128,15 +128,10 @@
               />
             </td>
           </tr>
-                   <tr>
+          <tr>
             <td class="fields">Date</td>
             <td>
-              <input
-                name="date"
-                class="text"
-                type="date"
-                autocomplete="off"
-              />
+              <input name="date" class="text" type="date" autocomplete="off" />
             </td>
           </tr>
 
@@ -261,40 +256,14 @@
       let amount = 0;
       function amountCalc() {
         if (radio2.value == "balcony") {
-          if (no_of_tickets.value == 2) {
-            amount = 150 * 2;
-          } else if (no_of_tickets.value == 4) {
-            amount = 150 * 4;
-          } else if (no_of_tickets.value == 8) {
-            amount = 150 * 8;
-          } else {
-            amount = 150;
-          }
-
-          document.getElementById("amt").innerHTML = amount;
+          amount += 150;
         } else if (radio2.value == "firstClass") {
-          if (no_of_tickets.value == 2) {
-            amount = 120 * 2;
-          } else if (no_of_tickets.value == 4) {
-            amount = 120 * 4;
-          } else if (no_of_tickets.value == 8) {
-            amount = 120 * 8;
-          } else {
-            amount = 120;
-          }
-          document.getElementById("amt").innerHTML = amount;
+          amount += 120;
+
         } else if (radio2.value == "secondClass") {
-          if (no_of_tickets.value == 2) {
-            amount = 100 * 2;
-          } else if (no_of_tickets.value == 4) {
-            amount = 100 * 4;
-          } else if (no_of_tickets.value == 8) {
-            amount = 100 * 8;
-          } else {
-            amount = 100;
-          }
-          document.getElementById("amt").innerHTML = amount;
+          amount += 100;
         }
+        document.getElementById("amt").innerHTML = amount;
       }
     </script>
   </body>
